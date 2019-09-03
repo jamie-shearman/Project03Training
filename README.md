@@ -29,9 +29,6 @@ __Note__: You can create your own folder which parallels the folder structure wi
 ## Additional backend (for practice)
 - [Online Store Server](http://awesome-store-server.herokuapp.com/) - A backend having data for an online store (products, reviews). You can build a simple online store that displays list of products on a page. On clicking a product, user is navigated to a page displaying all of the details for the product. The reviews for the product may be shown below, along with a form to add a new review for the product. You may also have a page to add a new product.
 
-## Clarifications
-- [Why we should not bind to private data members component class](https://stackoverflow.com/questions/34574167/angular2-should-private-variables-be-accessible-in-the-template)
-
 ## References
 - [Excellent reference for JavaScript](https://javascript.info/)
 - [One page introduction to ES2015 features](https://babeljs.io/docs/en/learn)
