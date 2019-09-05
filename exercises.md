@@ -6,14 +6,14 @@
 2. Use a for loop to print the first 10 numbers in the following sequence
 1, 2, 4, 8, 16, 32, 64, ..., 2^(n - 1), ...
 
-3. Use for loops to print the following
+3. Use for loops to print the following  
 1  
 1 2  
 1 2 3  
 1 2 3 4  
 1 2 3 4 5  
 
-4. Use for loops to print the following
+4. Use for loops to print the following  
 1  
 2 3  
 4 5 6  
