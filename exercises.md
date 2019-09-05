@@ -7,18 +7,18 @@
 1, 2, 4, 8, 16, 32, 64, ..., 2^(n - 1), ...
 
 3. Use for loops to print the following
-1
-1 2
-1 2 3
-1 2 3 4
-1 2 3 4 5
+1  
+1 2  
+1 2 3  
+1 2 3 4  
+1 2 3 4 5  
 
 4. Use for loops to print the following
-1
-2 3
-4 5 6
-7 8 9 10
-11 12 13 14 15
+1  
+2 3  
+4 5 6  
+7 8 9 10  
+11 12 13 14 15  
 
 5. Create an array with a few numbers (at least 4). Now,
 * Print the length of the array (number of items in the array).
@@ -37,7 +37,7 @@ _Example_: For array [ 1, 2, 3, 4 ] it calculates the sum of squares as 30 (i.e.
 8. Write a for loop that creates a new array with squares of numbers in a supplied array.
 _Example_: Supplied array is [ 1, 2, 3, 4 ]. You should generate a new array [ 1, 4, 9, 16 ] from it.
 
-9. Write a function square() that returns the square of a number passed to it. Use function declaration syntax to declare the function.
+9. Write a function square() that returns the square of a number passed to it. Use function declaration syntax to declare the function.  
 _Example_: 
 ```
 console.log( square( 3 ) ); // prints 9
@@ -47,7 +47,7 @@ console.log( square( 3 ) ); // prints 9
 * 5 <= hour < 12: "Good morning"
 * 12 <= hour < 16: "Good afternoon"
 * 16 <= hour < 20: "Good evening"
-* Otherwise, "Good night"
+* Otherwise, "Good night"  
 __Note__: The hour can be obtained by using this statement
 ```
 var hour = (new Date()).getHours()
@@ -73,7 +73,7 @@ console.log( [ 1, 2, 3, 4 ], 5 ); // prints false
 
 14. Write a function that accepts another function and calls the accepted function.
 
-15. Write a function sum() that accepts 2 numbers (say x and y) and another function (say, transform) as arguments. The transform function should be a function that accepts a number and returns another number - for example, a function square() that accepts a number and returns the square of a number. The sum() function applies the transform function on each of each and y and returns the sum of the results of calling transform - for example, sum() would return x^2 + y^2 if called as sum( x, y, square );
+15. Write a function sum() that accepts 2 numbers (say x and y) and another function (say, transform) as arguments. The transform function should be a function that accepts a number and returns another number - for example, a function square() that accepts a number and returns the square of a number. The sum() function applies the transform function on each of each and y and returns the sum of the results of calling transform - for example, sum() would return x^2 + y^2 if called as sum( x, y, square );  
 _Example_:
 ```
 function sum( x ) { return x * x };
@@ -90,7 +90,7 @@ console.log( sum( [ 1, 2, 3 ], square ) ); // prints 14
 console.log( sum( [ 1, 2, 3 ], cube ) ); // prints 36
 ```
 
-17. Write a function exponentFactory() that accepts a number, say x. Define 2 functions square() and cube() within it (which accept a number each, and return the square and cube respectively). If x is 2, exponentFactory returns the square() function, if 3 it returns the cube function. For any other input it returns a function that returns the number it accepts as such. Call the exponentFactory() function and then the returned function, and log the result.
+17. Write a function exponentFactory() that accepts a number, say x. Define 2 functions square() and cube() within it (which accept a number each, and return the square and cube respectively). If x is 2, exponentFactory returns the square() function, if 3 it returns the cube function. For any other input it returns a function that returns the number it accepts as such. Call the exponentFactory() function and then the returned function, and log the result.  
 _Example_:
 ```
 var fn;
@@ -105,7 +105,7 @@ fn = exponentFactory( 4 );
 console.log( fn( 5 ) ); // prints 5;
 ```
 
-18. Write a function addTo() that accepts a number x. addTo() returns a function that accepts a number y and returns the sum of x and y. Call the addTo() function few times, and then the returned function, and log the result.
+18. Write a function addTo() that accepts a number x. addTo() returns a function that accepts a number y and returns the sum of x and y. Call the addTo() function few times, and then the returned function, and log the result.  
 _Example_:
 ```
 var addTo10 = addTo( 10 );
