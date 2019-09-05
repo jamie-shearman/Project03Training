@@ -4,6 +4,9 @@ JavaScript and Angular training from Zeolearn
 ## Notepad for collaborative editing
 - [Notepad for collaborative editing](https://notepad.pw/zeolearn-angular)
 
+## Exercises
+- [Exercises can be found here](./exercises.md)
+
 ## Angular training
 - [Software to be installed before start of training](./software-to-be-installed.pdf)required.
 - [Topics to be covered in JavaScript training](./javascript-course-outline.pdf)
