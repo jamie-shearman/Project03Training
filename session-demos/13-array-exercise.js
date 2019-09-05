@@ -21,3 +21,19 @@ console.log( 'bucketClone = ', bucketClone );
 
 // var x = 10, y;
 // y = x;
+
+// Many languages have 2 kinds of variables - one which holds a value, and one which holds a reference to a variable
+
+// primitives are copied by value
+// non-primitives are copied by reference
+var x = 10;
+var y;
+y = x; // we are assigning a primitive value (number, boolean, string)
+x++;
+console.log( 'x = ', x );
+console.log( 'y = ', y );
+
+// bucket is a reference
+// box is a reference
+
+box = bucket; // bucket is an array (non-primitive) - copied by reference - box and bucket refer to one and the same array
