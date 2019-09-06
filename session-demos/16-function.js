@@ -1,3 +1,4 @@
+// function declaration syntax
 function sum( x, y ) {
     x++; // will not change a
     var result = x + y;
