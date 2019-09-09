@@ -26,5 +26,25 @@ console.log( project["hours"], project["cost"]["budget"] );
 
 project["hours"]++;
 project["teamMembers"][2] = "David"; // added a new team member
+project["manager"] = "Brad"; // add a new key-value pair
+delete project["hours"]; // remove a key-value pair
+
+project["cost"]["investment"] = 10;
+
+// party : {
+//     location: ...project,
+//     organizer: ''
+// }
+
+// one way to add an object
+// project["party"] = {
+//     location: "Gastro Pub",
+//     organizer: 'Pete'
+// };
+
+project["party"] = { };
+project["party"]["location"] = "Gastro Pub";
+project["party"]["organizer"] = "Pete";
+
 
 console.log( project );
