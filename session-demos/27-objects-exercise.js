@@ -6,16 +6,23 @@ var Object1 = {
 };
 
 // addSurname is a property whose value is a function - such a property is called a method
-var Object2 = {
+var Object3 = {
     name: "Maria",
     age: 40,
     addSurname: function xyz() {
-        Object2["name"] = Object2["name"] + " " + "Sharapova";
+        console.log( this ); // this is same as Object2
+        this["name"] = this["name"] + " " + "Sharapova";
     }
 };
 
 Object2["addSurname"]();
 
+Object3["celebrateBirthday"] = function abc() {
+    this["age"] = this["age"] - 10;
+}
+
+Object3["celebrateBirthday"]();
+console.log( Object3["age"] );
 console.log(Object2["name"]);
 
 Object2["age"]++
@@ -56,9 +63,15 @@ celebrateBirthday();
 
 
 function sumSquares( x, y ) {
-    var result = x * x + y * y;
+    var result = 12 * 12 + 13 * 13;
     return result;
 }
 
 console.log( sumSquares( 2, 3 ) );
 console.log( sumSquares( 12, 13 ) );
+
+var x = 12, y = 14;
+var sum = x + y;
+
+movie["AddToCast"]( "Maria" ); // movie["cast"] = ["a", "b", "c", "Maria"]
+movie["AddToCast"]( "John" ); // movie["cast"] = ["a", "b", "c", "Maria", "John"]
