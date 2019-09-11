@@ -4,3 +4,11 @@ var z = function( x ) {
 }
 
 console.log( z( 3 ) );
+
+var sum = function( x , y ) {
+    return x + y;
+}
+
+function sum( x, y ) {
+    return x + y;
+}

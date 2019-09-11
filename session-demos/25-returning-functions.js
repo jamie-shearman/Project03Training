@@ -9,5 +9,5 @@ function f() {
 }
 
 var x = f();
-
+console.log( x );
 x(); // same as saying g()
