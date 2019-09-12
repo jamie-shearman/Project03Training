@@ -67,6 +67,8 @@ function sumSquares( x, y ) {
     return result;
 }
 
+
+var finalResult = sumSquares( 2, 3 );
 console.log( sumSquares( 2, 3 ) );
 console.log( sumSquares( 12, 13 ) );
 
