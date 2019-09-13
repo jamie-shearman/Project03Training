@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <button id="btn-change-size">Increase font size</button>
+        <p id="para" style="font-size: 12px;">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam aperiam minima consequuntur? Possimus aut sit expedita mollitia error velit excepturi, atque ipsa consectetur perspiciatis quo porro eveniet incidunt quisquam nostrum.
+        </p>
+
+        <script>
+            // We want to increase font siz of the para when we click on the buttton
+            const button = document.querySelector( '#btn-change-size' );
+            var x = 1;
+            
+            function changeFontSize() {
+                const para = document.querySelector( '#para' );
+                para.style.fontSize = x + 'em';
+                x++;
+            }
+
+            button.addEventListener( 'click', changeFontSize );
+        </script>
+    </body>
+</html>
