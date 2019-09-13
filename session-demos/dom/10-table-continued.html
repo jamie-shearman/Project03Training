@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <button id="btn-add-rows">Click to add rows to the table</button>
+        <br />
+        Name: <input type="text" id="name" />
+        <br />
+        Email id: <input type="text" id="emailid" />
+        <table>
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Email id</td>
+                </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+        </table>
+        
+        <script>
+            // button, tableBody objects are both DOM nodes
+            var button = document.querySelector( '#btn-add-rows' );
+            var tableBody = document.querySelector( '#table-body' );
+
+            function onClick() {
+                const name = document.querySelector( '#name' ).value;
+                const emailid = document.querySelector( '#emailid' ).value;
+
+                // var result = parseInt( "2" ); // result will be 2
+                // var nameAsNumber = parseInt( name );
+
+                // alert( 'I am listening!' );
+                tableBody.innerHTML = tableBody.innerHTML + `
+                    <tr>
+                        <td>${name}</td>
+                        <td>${emailid}</td>
+                    </tr>
+                `;
+            }
+
+            button.addEventListener( 'click', onClick );
+            const nameInput = document.querySelector( '#name' );
+
+            // input event fires when user types within the input element
+            function onInput() {
+                console.log( nameInput.value );
+            }
+            
+            nameInput.addEventListener( 'input', onInput );
+        </script>
+    </body>
+</html>
