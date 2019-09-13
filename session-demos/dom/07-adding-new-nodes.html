@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <button id="btn-add-rows">Click to add rows to the table</button>
+        <table>
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Email id</td>
+                </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+        </table>
+        
+        <script>
+            // button, tableBody objects are both DOM nodes
+            var button = document.querySelector( '#btn-add-rows' );
+            var tableBody = document.querySelector( '#table-body' );
+
+            function onClick() {
+                // alert( 'I am listening!' );
+                tableBody.innerHTML = tableBody.innerHTML + `
+                    <tr>
+                        <td>Hello</td>
+                        <td>World</td>
+                    </tr>
+                `;
+            }
+
+            button.addEventListener( 'click', onClick );
+        </script>
+    </body>
+</html>
