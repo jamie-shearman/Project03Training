@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+            table {
+                border: 1px solid crimson;
+                border-collapse: collapse;
+            }
+
+            td, th {
+                border: 1px solid crimson;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Product Catalog</h1>
+        <hr />
+        <form id="add-product-form">
+            <div>
+                Name: <input type="text" id="name" />
+            </div>
+            <div>
+                Code: <input type="text" id="code" />
+            </div>
+            <div>
+                Release date: <input type="text" id="releaseDate" />
+            </div>
+            <div>
+                Description: <textarea id="description"></textarea>
+            </div>
+            <div>
+                Price: <input type="text" id="price" />
+            </div>
+            <div>
+                Rating (1 - 5):
+                <select id="starRating">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div>
+                Image URL: <input type="text" id="imageUrl" />
+            </div>
+            <button type="submit">Add this product</button>
+        </form>
+        <pre id="products">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody id="products-tbody"></tbody>
+            </table>
+        </pre>
+
+        <!-- script 1 : this script will fetch all products and populate the table -->
+        <script>
+            // x is a promise object
+            var x = fetch( "https://awesome-store-server.herokuapp.com/products" );
+            
+            function onSuccess1( response ) {
+                if( response.status < 400 ) { // success
+                    return response.json();
+                } else { // error from server
+                    var errObj = {
+                        message: response.statusText
+                    };
+                    throw errObj;
+                }
+            }
+
+            function onParseJson1( products ) {
+                console.log( products );
+
+                var productsTableBody = document.querySelector( '#products-tbody' );
+
+                // form a table with products info...
+                for( var i = 0; i < products.length; i++ ) {
+                    productsTableBody.innerHTML = productsTableBody.innerHTML + 
+                    `<tr>
+                        <td><img src="${products[i].imageUrl}" /></td>
+                        <td>${products[i].name}</td>
+                        <td>${products[i].price}</td>
+                    </tr>`
+                }
+            }
+
+            function onError1( error ) {
+                alert( error.message );
+            }
+
+            x.then( onSuccess1 ).then( onParseJson1 ).catch( onError1 );
+        </script>
+
+        <!-- script 2 : this script will post a new product -->
+        <script>
+            // x is a promise object
+            // hard code a product object -> post it
+            // form to get product info from user -> create a product object -> post it
+
+            var form = document.querySelector( '#add-product-form' );
+
+            form.addEventListener( 'submit', addProduct );
+
+            // when an event occurs, the browser creates an event object and passes it to event handler function
+            function addProduct( event ) { 
+                // this prevents default action on part of the browser (form submission to the same page)
+                event.preventDefault();
+
+                var name = document.querySelector( '#name' ).value;
+                var code = document.querySelector( '#code' ).value;
+                var releaseDate = document.querySelector( '#releaseDate' ).value;
+                var description = document.querySelector( '#description' ).value;
+                var price = document.querySelector( '#price' ).value;
+                var starRating = document.querySelector( '#price' ).value;
+                var imageUrl = document.querySelector( '#imageUrl' ).value;
+                
+                var newProduct = {
+                    "name": name,
+                    "code": code,
+                    "releaseDate": releaseDate,
+                    "description": description,
+                    "price": parseInt( price ),
+                    "starRating": parseInt( starRating ),
+                    "imageUrl": imageUrl
+                };
+
+                var requestConfigObj = {
+                    method: 'post',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify( newProduct )
+                };
+
+                var y = fetch( "https://awesome-store-server.herokuapp.com/products", requestConfigObj );
+                
+                function onSuccess2( response ) {
+                    if( response.status < 400 ) { // success
+                        return response.json();
+                    } else { // error from server
+                        var errObj = {
+                            message: response.statusText
+                        };
+                        throw errObj;
+                    }
+                }
+
+                function onParseJson2( product ) {
+                    console.log( product );
+
+                    var productsTableBody = document.querySelector( '#products-tbody' );
+
+                    productsTableBody.innerHTML = productsTableBody.innerHTML + 
+                    `<tr>
+                        <td><img src="${product.imageUrl}" /></td>
+                        <td>${product.name}</td>
+                        <td>${product.price}</td>
+                    </tr>`
+                }
+
+                function onError2( error ) {
+                    alert( error.message );
+                }
+
+                y.then( onSuccess2 ).then( onParseJson2 ).catch( onError2 );
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+            table {
+                border: 1px solid crimson;
+                border-collapse: collapse;
+            }
+
+            td, th {
+                border: 1px solid crimson;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Delete a product</h1>
+        <hr />
+        Product id: <input type="text" id="product-id" />
+        <button id="btn-delete">Delete product with this id</button>
+
+        <script>
+            var button = document.querySelector( '#btn-delete' );
+
+            function onDeleteButtonClick() {
+                var productIdTextNode = document.querySelector( '#product-id' );
+                var productId = productIdTextNode.value;
+
+                var requestConfigObj = {
+                    method: 'delete'
+                };
+
+                var x = fetch( `https://awesome-store-server.herokuapp.com/products/${productId}`, requestConfigObj );
+            
+                function onSuccess1( response ) {
+                    if( response.status < 400 ) { // success
+                        return alert( 'Product has been deleted' );
+                    } else { // error from server
+                        var errObj = {
+                            message: response.statusText
+                        };
+                        throw errObj;
+                    }
+                }
+
+                function onError1( error ) {
+                    alert( error.message );
+                }
+
+                x.then( onSuccess1 ).catch( onError1 );
+            }
+
+            button.addEventListener( 'click', onDeleteButtonClick );
+        </script>
+    </body>
+</html>

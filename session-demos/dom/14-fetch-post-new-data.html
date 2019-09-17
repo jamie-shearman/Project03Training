@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <style>
+            table {
+                border: 1px solid crimson;
+                border-collapse: collapse;
+            }
+
+            td, th {
+                border: 1px solid crimson;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Product Catalog</h1>
+        <hr />
+        <pre id="products">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody id="products-tbody"></tbody>
+            </table>
+        </pre>
+
+        <!-- script 1 : this script will fetch all products and populate the table -->
+        <script>
+            // x is a promise object
+            var x = fetch( "https://awesome-store-server.herokuapp.com/products" );
+            
+            function onSuccess1( response ) {
+                if( response.status < 400 ) { // success
+                    return response.json();
+                } else { // error from server
+                    var errObj = {
+                        message: response.statusText
+                    };
+                    throw errObj;
+                }
+            }
+
+            function onParseJson1( products ) {
+                console.log( products );
+
+                var productsTableBody = document.querySelector( '#products-tbody' );
+
+                // form a table with products info...
+                for( var i = 0; i < products.length; i++ ) {
+                    productsTableBody.innerHTML = productsTableBody.innerHTML + 
+                    `<tr>
+                        <td><img src="${products[i].imageUrl}" /></td>
+                        <td>${products[i].name}</td>
+                        <td>${products[i].price}</td>
+                    </tr>`
+                }
+            }
+
+            function onError1( error ) {
+                alert( error.message );
+            }
+
+            x.then( onSuccess1 ).then( onParseJson1 ).catch( onError1 );
+        </script>
+
+        <!-- script 2 : this script will post a new product -->
+        <script>
+            // x is a promise object
+            // hard code a product object -> post it
+            // form to get product info from user -> create a product object -> post it
+
+            var iPhoneXR = {
+                "name": "iPhone XR",
+                "code": "IPH-XR",
+                "releaseDate": "Mar 25, 2019",
+                "description": "Best phone ever",
+                "price": 900,
+                "starRating": 4.5,
+                "imageUrl": "https://drop.ndtv.com/TECH/product_database/images/910201410301AM_635_apple_iphone_6.jpeg"
+            };
+
+            var requestConfigObj = {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify( iPhoneXR )
+            };
+
+            var y = fetch( "https://awesome-store-server.herokuapp.com/products", requestConfigObj );
+            
+            function onSuccess2( response ) {
+                if( response.status < 400 ) { // success
+                    return response.json();
+                } else { // error from server
+                    var errObj = {
+                        message: response.statusText
+                    };
+                    throw errObj;
+                }
+            }
+
+            function onParseJson2( product ) {
+                console.log( product );
+
+                var productsTableBody = document.querySelector( '#products-tbody' );
+
+                productsTableBody.innerHTML = productsTableBody.innerHTML + 
+                `<tr>
+                    <td><img src="${product.imageUrl}" /></td>
+                    <td>${product.name}</td>
+                    <td>${product.price}</td>
+                </tr>`
+            }
+
+            function onError2( error ) {
+                alert( error.message );
+            }
+
+            function sum( x, y ) {
+                return x + y;
+            }
+
+            sum( 23, 34 );
+
+            function add( x, y ) {
+                return x.value + y.value;
+            }
+
+            add( { value: 23 }, { value: 34 } );
+
+            y.then( onSuccess2 ).then( onParseJson2 ).catch( onError2 );
+        </script>
+    </body>
+</html>
