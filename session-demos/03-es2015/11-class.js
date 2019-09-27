@@ -52,3 +52,8 @@ mark.celebrateBirthday();
 
 console.log( jane );
 console.log( mark );
+
+// you can use xyz instanceof Function to check if something is a function (true for functions, false otherwise)
+console.log( Person instanceof Function ); // true
+console.log( function foo() { } instanceof Function ); // true
+console.log( { x : 1 } instanceof Function ); // false
