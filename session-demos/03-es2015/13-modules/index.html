@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- <script src="index.js" type="module"></script> -->
+        <!-- <script src="store.js" type="module"></script> -->
+
+        <script type="module">
+            import { sum, diff, product } from "./index.js";
+            import { product as storeProduct } from "./store.js";
+
+            console.log( sum( 10, 20 ) );
+            console.log( diff( 10, 20 ) );
+            console.log( product( 10, 20 ) );
+            console.log( storeProduct );
+        </script>
+    </body>
+</html>
