@@ -16,6 +16,9 @@ let john : Person = {
     address: {
         city: 'New York',
         zipCode: 54321
+    },
+    celebrateBirthday: function() {
+        this.age++;
     }
 };
 
