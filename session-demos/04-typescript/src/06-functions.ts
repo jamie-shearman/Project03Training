@@ -11,7 +11,10 @@ const sum2 = function( x : number, y : number ) : number {
     return x + y;
 };
 
-type AcceptsTwoNumbersAndReturnsANumber = ( x : number, y : number) => number;
+// AcceptsTwoNumbersAndReturnsANumber is a "type alias".
+// It is an alias for the type ( x : number, y : number ) => number
+// Wherever we use ( x : number, y : number ) => number, we can use AcceptsTwoNumbersAndReturnsANumber instead (and vice versa)
+type AcceptsTwoNumbersAndReturnsANumber = ( x : number, y : number ) => number;
 
 const sum3 : AcceptsTwoNumbersAndReturnsANumber = function( x, y ) {
     return x + y;
