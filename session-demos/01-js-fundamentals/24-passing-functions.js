@@ -10,4 +10,6 @@ function g() {
     console.log( 'hey, i am g' );
 }
 
+f( 1 ); // x = 1
+f( "hello" ); // x = "hello"
 f( g ); // x = g

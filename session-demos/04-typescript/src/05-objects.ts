@@ -32,3 +32,5 @@ let maria : Person = {
         zipCode: 43210
     }
 };
+
+export {}

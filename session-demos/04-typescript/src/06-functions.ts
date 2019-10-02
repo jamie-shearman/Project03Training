@@ -1,9 +1,15 @@
 const result1 = sum1( 10, 20 );
 
 // giving types along with the function declaration
-function sum1( x : number, y : number ) : number {
+// the return type : number is not really necessary in this case
+function sum1( x : number, y : number ) /*: number */ {
     return x + y;
 }
+
+sum1( 10, 'hello' ); // error
+
+// TypeScript is intelligent. It infers that the result MUST be a number
+const sumOf10And20 : string = sum1( 10, 20 ); // error
 
 const result2 = sum2( 10, 20 );
 
