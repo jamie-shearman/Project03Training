@@ -4,6 +4,10 @@ JavaScript and Angular training from Zeolearn
 ## Notepad for collaborative editing
 - [Notepad for collaborative editing](https://notepad.pw/zeolearn-angular)
 
+## Screenshots
+- [Angular Module - Part 1](./screenshots/angular-modules-part-1.png)
+- [Angular Module - Part 2](./screenshots/angular-modules-part-2.png)
+
 ## Exercises
 - [Exercises can be found here](./exercises.md)
 
