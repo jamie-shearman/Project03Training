@@ -7,6 +7,7 @@ JavaScript and Angular training from Zeolearn
 ## Screenshots
 - [Angular Module - Part 1](./screenshots/angular-modules-part-1.png)
 - [Angular Module - Part 2](./screenshots/angular-modules-part-2.png)
+- [Using HTTP Module and Service](./using-http-client-module-andhttp-client-service.png)
 
 ## Exercises
 - [Exercises can be found here](./exercises.md)

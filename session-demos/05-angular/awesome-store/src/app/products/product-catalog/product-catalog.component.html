@@ -1,1 +1,26 @@
-<p>product-catalog works!</p>
+<div class="container my-4">
+    <h1>{{title}}</h1>
+    <hr />
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let xyz of products">
+                <td>
+                    <!-- here, we are using a variable value for the attribute src -->
+                    <!-- <img src={{xyz.imageUrl}} /> --> <!-- this syntax works but is slower for attributes -->
+                    <img [src]="xyz.imageUrl" /> <!-- this is the preferred syntax -->
+                </td>
+                <td>{{xyz.name}}</td>
+                <td>{{xyz.price}}</td>
+                <td>{{xyz.starRating}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
