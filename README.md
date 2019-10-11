@@ -8,6 +8,9 @@ JavaScript and Angular training from Zeolearn
 - [Angular Module - Part 1](./screenshots/angular-modules-part-1.png)
 - [Angular Module - Part 2](./screenshots/angular-modules-part-2.png)
 - [Using HTTP Module and Service](./using-http-client-module-andhttp-client-service.png)
+- [Relation between Git local repo and Github repo](./relation-between-git-local-repo-and-github-repo.png)
+- [Directives in CommonModule](./directives-in-common-module.png)
+- [ngModel and ngModelChange](./ngmodel-and-ngmodelchange.png)
 
 ## Exercises
 - [Exercises can be found here](./exercises.md)
