@@ -7,10 +7,13 @@ JavaScript and Angular training from Zeolearn
 ## Screenshots
 - [Angular Module - Part 1](./screenshots/angular-modules-part-1.png)
 - [Angular Module - Part 2](./screenshots/angular-modules-part-2.png)
-- [Using HTTP Module and Service](./using-http-client-module-andhttp-client-service.png)
-- [Relation between Git local repo and Github repo](./relation-between-git-local-repo-and-github-repo.png)
-- [Directives in CommonModule](./directives-in-common-module.png)
-- [ngModel and ngModelChange](./ngmodel-and-ngmodelchange.png)
+- [Using HTTP Module and Service](./screenshots/using-http-client-module-andhttp-client-service.png)
+- [Relation between Git local repo and Github repo](./screenshots/relation-between-git-local-repo-and-github-repo.png)
+- [Directives in CommonModule](./screenshots/directives-in-common-module.png)
+- [ngModel and ngModelChange](./screenshots/ngmodel-and-ngmodelchange.png)
+- [Parent to child communication - How to pass custom inputs](./screenshots/parent-to-child-communication-how-to-pass-custom-inputs.png)
+- [Child to parent communication - How to trigger custom events - Part 1](./screenshots/child-to-parent-communication-how-to-trigger-custom-event-01.png)
+- [Child to parent communication - How to trigger custom events - Part 2](./screenshots/child-to-parent-communication-how-to-trigger-custom-event-02.png)
 
 ## Exercises
 - [Exercises can be found here](./exercises.md)

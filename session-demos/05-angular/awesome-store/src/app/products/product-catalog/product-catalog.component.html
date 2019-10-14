@@ -26,7 +26,10 @@
                 </td>
                 <td>{{xyz.name}}</td> <!-- interpolation : {{variable}}-->
                 <td>{{xyz.price}}</td>
-                <td>{{xyz.starRating}}</td>
+                <td>
+                    <app-star-rating [num_stars]="xyz.starRating" color="#ddffee" size="30px" (buttonClick)="iWannaDoSomethingToo()"></app-star-rating>
+                    <app-star-rating [num_stars]="xyz.starRating" color="crimson" size="40px" (buttonClick)="iWannaDoSomethingToo()"></app-star-rating>
+                </td>
             </tr>
         </tbody>
     </table>

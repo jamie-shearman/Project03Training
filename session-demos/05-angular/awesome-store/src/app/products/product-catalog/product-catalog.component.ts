@@ -47,4 +47,8 @@ export class ProductCatalogComponent {
 
         this.filteredProducts = this.products.filter( selectProductsThatMatchFilterKey );
     }
+
+    iWannaDoSomethingToo() {
+        alert( 'Buttton was clicked' );
+    }
 }
