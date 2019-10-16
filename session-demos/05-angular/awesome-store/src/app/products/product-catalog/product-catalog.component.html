@@ -20,7 +20,7 @@
         <tbody>
             <tr *ngFor="let xyz of filteredProducts">
                 <td>
-                    <!-- here, we are using a variable value for the attribute src -->
+                    <!-- here, we are using a variable value for the attribute src hello -->
                     <!-- <img src={{xyz.imageUrl}} /> --> <!-- this syntax works but is slower for attributes -->
                     <img [src]="xyz.imageUrl" *ngIf="displayImages" /> <!-- this is the preferred syntax --> <!-- property binding <htmlel [attr]="variable" /> -->
                 </td>
